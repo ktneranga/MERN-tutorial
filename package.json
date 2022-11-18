@@ -1,0 +1,29 @@
+{
+  "name": "mern",
+  "version": "1.0.0",
+  "description": "Goalsetter app",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktneranga/MERN-tutorial.git"
+  },
+  "author": "Teran Neranga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ktneranga/MERN-tutorial/issues"
+  },
+  "homepage": "https://github.com/ktneranga/MERN-tutorial#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
