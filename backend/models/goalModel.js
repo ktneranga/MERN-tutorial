@@ -5,7 +5,6 @@ const { Schema } = mongoose;
 const goalSchema = Schema({
     text: {
         type: String,
-        // required : true,
         required: [true, 'Please add a goal']
     },
 }, {
