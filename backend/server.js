@@ -2,7 +2,8 @@ const express = require("express");
 //in order to have env
 const dotenv = require("dotenv").config();
 const PORT = process.env.PORT || 8000
-const router = require('./routes/GoalRoutes');
+const goalsRouter = require('./routes/GoalRoutes');
+const userRouter = require('./routes/UserRoutes');
 const { errorHandler } = require('./middlewares/errorMiddleware');
 const connectDb = require('./config/db');
 
@@ -13,7 +14,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
-app.use('/api/goals', router);
+app.use('/api/goals', goalsRouter);
+app.use('/api/users', userRouter);
 
 app.use(errorHandler);
 
