@@ -10,18 +10,13 @@ const getGoals = asyncHandler(async (req, res) => {
 })
 
 const createGoal = asyncHandler(async (req, res) => {
-    if (req.body.text === undefined) {
+    if (!req.body.text) {
         res.status(400)
         throw new Error('Input field is required');
     }
 
-    const goal = await Goal.create({
-        text: req.body.text
-    });
-    res.status(200).json({
-        status: true,
-        goal: goal
-    });
+    console.log(req.user._id);
+   
 })
 
 // const createGoal = async (req, res) => {

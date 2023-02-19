@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 8000
 const goalsRouter = require('./routes/GoalRoutes');
 const userRouter = require('./routes/UserRoutes');
 const { errorHandler } = require('./middlewares/errorMiddleware');
+const {authHandler} = require('./middlewares/authMiddleware');
 const connectDb = require('./config/db');
 
 connectDb();
@@ -18,5 +19,7 @@ app.use('/api/goals', goalsRouter);
 app.use('/api/users', userRouter);
 
 app.use(errorHandler);
+app.use(authHandler);
+
 
 app.listen(PORT, () => console.log(`Server is running on PORT ${PORT}`));
